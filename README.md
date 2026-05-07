@@ -39,7 +39,7 @@ That keeps the app simple and much safer than sharing one central database betwe
 
 Use the full guide here:
 
-[docs/self-host-setup.md](C:\Users\Rafael\Documents\dashboard twitter\docs\self-host-setup.md)
+[docs/self-host-setup.md](docs/self-host-setup.md)
 
 That guide covers:
 
@@ -55,7 +55,7 @@ That guide covers:
 
 1. Copy `.env.example` to `.env.local`
 2. Create a `Supabase` project
-3. Run [supabase/schema.sql](C:\Users\Rafael\Documents\dashboard twitter\supabase\schema.sql) in the Supabase SQL editor
+3. Run [supabase/schema.sql](supabase/schema.sql) in the Supabase SQL editor
 4. Create a private bucket named `tweet-screenshots`
 5. Create a `Gemini API key`
 6. Install dependencies with `npm install`
@@ -112,7 +112,7 @@ If you want someone else to use it, do **not** give them your own keys or databa
 Instead:
 
 1. send them the GitHub repo
-2. send them [docs/self-host-setup.md](C:\Users\Rafael\Documents\dashboard twitter\docs\self-host-setup.md)
+2. send them [docs/self-host-setup.md](docs/self-host-setup.md)
 3. let them create their own `Supabase`, `Gemini`, and `Vercel`
 
 That is the intended setup for this version.
