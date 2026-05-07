@@ -4,6 +4,8 @@ import { PostDetailEditor } from "@/components/post-detail-editor";
 import { getProjects } from "@/lib/data/projects";
 import { getPostById, getSignedScreenshotUrl } from "@/lib/data/posts";
 
+export const dynamic = "force-dynamic";
+
 type PostDetailPageProps = {
   params: Promise<{
     id: string;

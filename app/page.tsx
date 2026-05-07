@@ -5,6 +5,8 @@ import { isAiConfigured, isSupabaseConfigured } from "@/lib/env";
 import { formatDateOnly } from "@/lib/format";
 import type { PostRecord, ProjectRecord } from "@/lib/types";
 
+export const dynamic = "force-dynamic";
+
 function getPostReferenceDate(post: PostRecord) {
   return new Date(post.posted_at ?? post.created_at);
 }

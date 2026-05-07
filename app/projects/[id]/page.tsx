@@ -4,6 +4,8 @@ import { notFound } from "next/navigation";
 import { deleteProjectAction, updateProjectAction } from "@/app/projects/actions";
 import { getProjects } from "@/lib/data/projects";
 
+export const dynamic = "force-dynamic";
+
 type ProjectDetailPageProps = {
   params: Promise<{
     id: string;

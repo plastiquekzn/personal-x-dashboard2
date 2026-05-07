@@ -2,6 +2,8 @@ import { PostsIndex } from "@/components/posts-index";
 import { getProjects } from "@/lib/data/projects";
 import { getPosts } from "@/lib/data/posts";
 
+export const dynamic = "force-dynamic";
+
 export default async function PostsPage() {
   const [posts, projects] = await Promise.all([getPosts(), getProjects()]);
 
