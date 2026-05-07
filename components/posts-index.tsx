@@ -347,11 +347,6 @@ export function PostsIndex({ posts, projects }: PostsIndexProps) {
       }
 
       closeCaptureModal();
-      if (payload?.id) {
-        router.push(`/posts/${payload.id}`);
-        return;
-      }
-
       startTransition(() => {
         router.refresh();
       });
