@@ -37,11 +37,15 @@ That keeps the app simple and much safer than sharing one central database betwe
 
 ## Self-Host Setup
 
-Use the full guide here:
+Use the full local setup guide here:
 
 [docs/self-host-setup.md](docs/self-host-setup.md)
 
-That guide covers:
+Use the Vercel-only guide here if you do not want to download or install the project locally:
+
+[docs/vercel-only-setup.md](docs/vercel-only-setup.md)
+
+These guides cover:
 
 - GitHub
 - Supabase setup
