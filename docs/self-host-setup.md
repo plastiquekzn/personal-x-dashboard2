@@ -11,6 +11,22 @@ You will create your own:
 - `Gemini API key`
 - `Vercel` deployment
 
+## Requirements
+
+Install these first:
+
+- `Node.js` 20.9 or newer: [nodejs.org](https://nodejs.org/)
+- `Git`: [git-scm.com/downloads](https://git-scm.com/downloads)
+- a code editor, for example `VS Code`
+
+Check that Node and Git are available:
+
+```bash
+node --version
+npm --version
+git --version
+```
+
 ## 1. Get The Code
 
 You need your own copy of the repo.
@@ -25,6 +41,19 @@ If you use GitHub with Vercel, deployment becomes much easier.
 GitHub docs:
 
 - [Add an existing project to GitHub](https://docs.github.com/en/get-started/importing-your-projects-to-github/importing-source-code-to-github)
+
+If you are using this repository directly, clone it:
+
+```bash
+git clone https://github.com/plastiquekzn/personal-x-dashboard2.git
+cd personal-x-dashboard2
+```
+
+If you downloaded a ZIP instead:
+
+1. unzip the project
+2. open the unzipped folder in your terminal
+3. continue with the steps below
 
 ## 2. Create Supabase
 
@@ -44,7 +73,7 @@ Then collect these values:
 2. Create a new query
 3. Copy everything from:
 
-[supabase/schema.sql](C:\Users\Rafael\Documents\dashboard twitter\supabase\schema.sql)
+[supabase/schema.sql](../supabase/schema.sql)
 
 4. Paste it into Supabase
 5. Click `Run`
@@ -88,6 +117,18 @@ Docs:
 Copy:
 
 `.env.example` -> `.env.local`
+
+On macOS/Linux:
+
+```bash
+cp .env.example .env.local
+```
+
+On Windows PowerShell:
+
+```powershell
+Copy-Item .env.example .env.local
+```
 
 Fill in:
 
@@ -169,7 +210,7 @@ If the app complains about missing columns like `reposts_count` or `logo_path`, 
 
 Run the full schema again from:
 
-[supabase/schema.sql](C:\Users\Rafael\Documents\dashboard twitter\supabase\schema.sql)
+[supabase/schema.sql](../supabase/schema.sql)
 
 ### Gemini 429 or quota errors
 
@@ -203,7 +244,7 @@ If you are sharing this project with someone else, send them:
 1. the GitHub repository link
 2. this file:
 
-[docs/self-host-setup.md](C:\Users\Rafael\Documents\dashboard twitter\docs\self-host-setup.md)
+[docs/self-host-setup.md](self-host-setup.md)
 
 3. a short note like:
 

@@ -51,7 +51,49 @@ That guide covers:
 - local run
 - Vercel deploy
 
-## Quick Start
+## Installation
+
+Prerequisites:
+
+- `Node.js` 20.9 or newer
+- `Git`
+- a `Supabase` account
+- a `Gemini API key`
+
+Clone the repository:
+
+```bash
+git clone https://github.com/plastiquekzn/personal-x-dashboard2.git
+cd personal-x-dashboard2
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Create a local environment file:
+
+```bash
+cp .env.example .env.local
+```
+
+On Windows PowerShell, use:
+
+```powershell
+Copy-Item .env.example .env.local
+```
+
+Fill `.env.local` with your Supabase and Gemini values, then run the app:
+
+```bash
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000).
+
+## Quick Start Checklist
 
 1. Copy `.env.example` to `.env.local`
 2. Create a `Supabase` project
