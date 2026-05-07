@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "engines": {
-    "node": ">=20.9.0"
+    "node": "24.x"
   },
   "scripts": {
     "dev": "next dev",
@@ -13,8 +13,10 @@
   },
   "dependencies": {
     "@paddleocr/paddleocr-js": "^0.3.2",
+    "@sparticuz/chromium": "^148.0.0",
     "@supabase/supabase-js": "latest",
     "next": "latest",
+    "playwright-core": "^1.59.1",
     "react": "latest",
     "react-dom": "latest",
     "tesseract.js": "latest",

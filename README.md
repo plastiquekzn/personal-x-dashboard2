@@ -59,7 +59,7 @@ These guides cover:
 
 Prerequisites:
 
-- `Node.js` 20.9 or newer
+- `Node.js` 24.x
 - `Git`
 - a `Supabase` account
 - a `Gemini API key`

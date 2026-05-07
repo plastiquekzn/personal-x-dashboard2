@@ -1,7 +1,5 @@
-import { createRequire } from "node:module";
-
-const bundledPlaywrightEntry =
-  "C:/Users/Rafael/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright/index.js";
+import serverlessChromium from "@sparticuz/chromium";
+import { chromium } from "playwright-core";
 
 type CapturedTweet = {
   screenshotBuffer: Buffer;
@@ -9,43 +7,10 @@ type CapturedTweet = {
   height: number;
 };
 
-type PlaywrightModule = {
-  chromium: {
-    launch: (options: { headless: boolean }) => Promise<{
-      newPage: (options: {
-        viewport: { width: number; height: number };
-        colorScheme: "dark" | "light";
-      }) => Promise<{
-        goto: (url: string, options: { waitUntil: "domcontentloaded"; timeout: number }) => Promise<unknown>;
-        waitForTimeout: (ms: number) => Promise<void>;
-        locator: (selector: string) => {
-          first: () => {
-            waitFor: (options: { state: "visible"; timeout: number }) => Promise<void>;
-            getByText: (text: string) => {
-              count: () => Promise<number>;
-              first: () => {
-                click: (options: { timeout: number }) => Promise<void>;
-              };
-            };
-            boundingBox: () => Promise<{ width: number; height: number } | null>;
-            screenshot: (options: { type: "png"; animations: "disabled" }) => Promise<Buffer>;
-          };
-        };
-        close: () => Promise<void>;
-      }>;
-      close: () => Promise<void>;
-    }>;
-  };
-};
-
-function getPlaywright() {
-  const requireFromBundled = createRequire(bundledPlaywrightEntry);
-  return requireFromBundled("playwright") as PlaywrightModule;
-}
-
 export async function captureTweetFromUrl(tweetUrl: string): Promise<CapturedTweet> {
-  const { chromium } = getPlaywright();
   const browser = await chromium.launch({
+    args: serverlessChromium.args,
+    executablePath: await serverlessChromium.executablePath(),
     headless: true
   });
 

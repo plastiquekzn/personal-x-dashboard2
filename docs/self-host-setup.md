@@ -15,7 +15,7 @@ You will create your own:
 
 Install these first:
 
-- `Node.js` 20.9 or newer: [nodejs.org](https://nodejs.org/)
+- `Node.js` 24.x: [nodejs.org](https://nodejs.org/)
 - `Git`: [git-scm.com/downloads](https://git-scm.com/downloads)
 - a code editor, for example `VS Code`
 
