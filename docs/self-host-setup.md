@@ -139,12 +139,15 @@ SUPABASE_SERVICE_ROLE_KEY=your_supabase_service_role_key
 NEXT_PUBLIC_SUPABASE_BUCKET=tweet-screenshots
 GEMINI_API_KEY=your_gemini_api_key
 GEMINI_MODEL=gemini-2.5-flash-lite
+APP_BASIC_AUTH_USERNAME=your_login
+APP_BASIC_AUTH_PASSWORD=your_strong_password
 ```
 
 Important:
 
 - never commit `.env.local`
 - never share `SUPABASE_SERVICE_ROLE_KEY`
+- set `APP_BASIC_AUTH_USERNAME` and `APP_BASIC_AUTH_PASSWORD` before deploying if the app should be private
 
 ## 7. Run Locally
 
@@ -178,15 +181,36 @@ After opening the app:
 
 1. Push the repo to GitHub
 2. Go to [Vercel](https://vercel.com/)
-3. Import the GitHub repo
-4. Add the same environment variables from `.env.local`
-5. Deploy
+3. Click `Add New` -> `Project`
+4. Import the GitHub repo
+5. Keep the framework preset as `Next.js`
+6. Open `Environment Variables`
+7. Add every value from `.env.local`
+8. Make sure these two variables are set:
+
+```env
+APP_BASIC_AUTH_USERNAME=your_login
+APP_BASIC_AUTH_PASSWORD=your_strong_password
+```
+
+9. Click `Deploy`
+10. Open the deployment URL and enter your Basic Auth login and password
+
+After the first deploy, every push to the `main` branch creates a new Vercel deployment automatically.
 
 Vercel docs:
 
 - [Deploying Next.js on Vercel](https://vercel.com/docs/frameworks/nextjs)
 
-## 10. Safe Usage Model
+## 10. Keep The App Private
+
+This app includes Basic Auth middleware. When `APP_BASIC_AUTH_USERNAME` and `APP_BASIC_AUTH_PASSWORD` are set, every app page and API route requires that login.
+
+Use a long unique password. Do not reuse your GitHub, Vercel, Google, or Supabase password.
+
+Vercel also has Deployment Protection settings, but the free Hobby plan only protects preview and generated deployment URLs. Production domains are public on Hobby, so app-level Basic Auth is the recommended private-access option for this project.
+
+## 11. Safe Usage Model
 
 This version is meant to be used as:
 

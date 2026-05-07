@@ -93,6 +93,17 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000).
 
+## Private Access
+
+Set these environment variables to protect the app with browser Basic Auth:
+
+```env
+APP_BASIC_AUTH_USERNAME=your_login
+APP_BASIC_AUTH_PASSWORD=your_strong_password
+```
+
+Use the same values in Vercel. If these variables are empty, the app is not password-protected.
+
 ## Quick Start Checklist
 
 1. Copy `.env.example` to `.env.local`
@@ -100,8 +111,9 @@ Open [http://localhost:3000](http://localhost:3000).
 3. Run [supabase/schema.sql](supabase/schema.sql) in the Supabase SQL editor
 4. Create a private bucket named `tweet-screenshots`
 5. Create a `Gemini API key`
-6. Install dependencies with `npm install`
-7. Start the app with `npm run dev`
+6. Set `APP_BASIC_AUTH_USERNAME` and `APP_BASIC_AUTH_PASSWORD`
+7. Install dependencies with `npm install`
+8. Start the app with `npm run dev`
 
 ## Environment Variables
 
@@ -117,6 +129,8 @@ Optional:
 
 - `GEMINI_MODEL`
   default: `gemini-2.5-flash-lite`
+- `APP_BASIC_AUTH_USERNAME`
+- `APP_BASIC_AUTH_PASSWORD`
 
 ## Security Notes
 
